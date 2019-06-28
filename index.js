@@ -97,14 +97,12 @@ app.get('/', (req, res) => {
         </script>
     </body>
 </html>
-`)})
-})
+`)})})
 
 app.post('/', (req, res) => {
   const record = Object.assign({}, ...FIELDS.map((field) => ({[field]: req.body[field]})))
-  var records
   fs.readFile(FILEPATH, (err, data) => {
-    records = JSON.parse(data)
+    var records = JSON.parse(data)
     logger.info(`Appending new record:\n\t${JSON.stringify(record)}`)
     records.push(record)
     fs.writeFile(FILEPATH, JSON.stringify(records), (err) => {

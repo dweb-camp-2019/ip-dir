@@ -17,5 +17,6 @@ If you are developing and would like the app to restart on file changes:
     npm run dev
 
 # TODOs
+- add linter
 - write tests
 - validate input
