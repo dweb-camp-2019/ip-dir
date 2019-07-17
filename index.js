@@ -109,7 +109,7 @@ app.post('/', (req, res) => {
       if (err) {
         logger.error(`Error writing file:\n${err}`)
       }
-      res.redirect('/')
+      res.redirect('back')
     })
   })
 })
