@@ -75,7 +75,7 @@ app.get('/', (req, res) => {
    </head>
    <body>
         <div>
-            <form action="/" method="POST">
+            <form action="" method="POST">
                 ${FIELDS.map(
                   (field) => `${field}:<input type="text" name="${field}">`).join('')
                 }
