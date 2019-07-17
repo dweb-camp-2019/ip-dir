@@ -89,7 +89,10 @@ app.get('/', (req, res) => {
                 </tr>
                 ${JSON.parse(data).map(
                   (record) => `<tr>${FIELDS.map(
-                    (field) => `<td>${record[field]}</td>`).join('')
+                    (field) => `<td>${field === 'ip' ?
+                      `<a href="http://${record[field]}">${record[field]}</a>` :
+                      record[field]
+                    }</td>`).join('')
                   }</tr>`).join('\n')}
             </table>
         </div>
